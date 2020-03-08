@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="android.view.View" />
+
+        <variable
+            name="school"
+            type="com.dimitare.angdim.model.resume.Schools" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/major"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:text="@{school.major}"
+            android:textColor="@color/black_text"
+            android:textSize="17sp"
+            app:layout_constraintHorizontal_bias="0.10"
+            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:text="MS (COMPUTER SCIENCE), SOFTWARE ENGINEERING" />
+
+        <TextView
+            android:id="@+id/duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{school.duration}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/major"
+            tools:text="SEP 2003 – MAR 2007" />
+
+        <TextView
+            android:id="@+id/location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@{String.format(@string/schools_schema, school.schoolName, school.location)}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/duration"
+            tools:text="DePaul University – Chicago IL" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/achievements"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:achievementsData="@{school.achievements}"
+            app:layout_constraintBottom_toTopOf="@+id/bottom"
+            app:layout_constraintLeft_toLeftOf="@+id/location"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/location"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        <View
+            android:id="@+id/bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/achievements"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

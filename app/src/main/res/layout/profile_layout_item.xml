@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="profile"
+            type="com.dimitare.angdim.model.resume.Profile" />
+    </data>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/avatar"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_user_profile"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_margin="16dp"
+                tools:src="@drawable/ic_user_profile" />
+
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:lines="1"
+                android:maxLines="1"
+                android:padding="8dp"
+                android:text="@{profile.name}"
+                android:textColor="@color/black_text"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@+id/avatar"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Dimitare Karagogov" />
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:lines="1"
+                android:maxLines="1"
+                android:textSize="16sp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="1dp"
+                android:text="@{profile.address}"
+                app:layout_constraintLeft_toRightOf="@+id/avatar"
+                app:layout_constraintTop_toBottomOf="@+id/userName"
+                tools:text="aleja 29 Listopada 47B31-482 Kraków" />
+
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="start"
+                android:lines="1"
+                android:maxLines="1"
+                android:textSize="16sp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="1dp"
+                android:text="@{profile.phone}"
+                app:layout_constraintLeft_toRightOf="@+id/avatar"
+                app:layout_constraintTop_toBottomOf="@+id/address"
+                tools:text="+48 123 456 789" />
+
+            <TextView
+                android:id="@+id/linkedIn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:lines="1"
+                android:textSize="16sp"
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:paddingBottom="1dp"
+                android:text="@{profile.linkedIn}"
+                app:layout_constraintLeft_toRightOf="@+id/avatar"
+                app:layout_constraintTop_toBottomOf="@+id/phone"
+                tools:text="https://www.linkedin.com/in/linkedInProfile/" />
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="start"
+                app:constraint_referenced_ids="userName,address,phone,linkedIn" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,7 @@
+<resources>
+    <string name="avatar">Profile Picture</string>
+    <string name="professional_summary_content">Analytical and detail oriented Android app developer professional with stellar communication skills. Adept at bringing all team members together to reach a common goal on time and under budget. Conceptualizing app solutions with the latest technology, design theory, and a large dose of creativity. Committed to viable and easily functional app solutions for clients.</string>
+    <string name="position_schema">%s, %s, %s</string>
+    <string name="responsibilities_schema"> - %s</string>
+    <string name="schools_schema">%s - %s</string>
+</resources>
