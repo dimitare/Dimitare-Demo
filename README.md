@@ -26,3 +26,5 @@ The example demo uses the following technogies:
    - Coroutines
    - databinding
    - LiveData
+   
+   ![dimitare_demo_resume](https://user-images.githubusercontent.com/2376098/76172466-8e8ce680-6153-11ea-9b03-c5ebfcb2f129.JPEG)
