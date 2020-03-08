@@ -6,6 +6,8 @@ import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
+import com.dimitare.angdim.R
 import com.dimitare.angdim.fragments.*
 import com.dimitare.angdim.model.ResumeError
 import com.dimitare.angdim.model.ResumeItem
@@ -82,7 +84,10 @@ fun <T> setSchoolsRecyclerView(
 @BindingAdapter("app:avatarUrl")
 fun loadAvatarImage(view: ImageView, url: String?) {
     url?.let {
-        Glide.with(view).load(url).into(view)
+        Glide.with(view)
+            .load(url).placeholder(R.drawable.ic_user_profile)
+            .apply(RequestOptions.circleCropTransform())
+            .into(view);
     }
 }
 
