@@ -1,4 +1,4 @@
-package com.dimitare.angdim.dagger.qualifier
+package com.dimitare.angdim.dagger.scope
 
 import javax.inject.Scope
 
