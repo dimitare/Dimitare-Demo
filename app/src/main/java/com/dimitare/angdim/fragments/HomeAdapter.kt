@@ -112,6 +112,7 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
     }
 
     fun setData(items: Collection<ResumeItem>) {
+        mResumeItems.clear()
         mResumeItems.addAll(items)
     }
 
